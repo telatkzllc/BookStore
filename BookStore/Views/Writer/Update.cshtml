@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/UserLayout2.cshtml";
+}
+
+<h1>Update Yayınevi</h1>
+<form asp-controller="Writer" asp-action="Update" method="post">
+    <input type="hidden" asp-for="WriterId" />
+
+    <div class="form-group">
+        <label asp-for="WriterName" class="control-label"></label>
+        <input asp-for="WriterName" class="form-control" />
+        <span asp-validation-for="WriterName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WriterNation" class="control-label"></label>
+        <input asp-for="WriterNation" class="form-control" />
+        <span asp-validation-for="WriterNation" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WriterBirth" class="control-label"></label>
+        <input asp-for="WriterBirth" class="form-control" />
+        <span asp-validation-for="WriterBirth" class="text-danger"></span>
+    </div>
+    <!-- Diğer gerekli alanları buraya ekleyin -->
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+
+

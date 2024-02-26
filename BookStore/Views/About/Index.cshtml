@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .footer_column_title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+        text-align: center; /* Başlığı ortala */
+    }
+
+    .about_paragraph {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+    }
+</style>
+
+<header class="header d-flex flex-row">
+	<div class="header_content d-flex flex-row align-items-center">
+		<!-- Logo -->
+		<div class="logo_container">
+			<div class="logo">
+				<img src="~/course/images/logo.png" alt="">
+				<span>Telo Bookstore</span>
+			</div>
+		</div>
+		<!-- Main Navigation -->
+		<nav class="main_nav_container">
+			<div class="main_nav">
+				<ul class="main_nav_list">
+					<li class="main_nav_item"><a href="@Url.Action("Index", "About")">Hakkımızda</a></li>
+					<li class="main_nav_item"><a href="@Url.Action("Index", "Publisher")">Yayınevleri</a></li>
+					<li class="main_nav_item"><a href="@Url.Action("Index", "Book")">Kitaplar</a></li>
+					<li class="main_nav_item"><a href="@Url.Action("Index", "Writer")">Yazarlar</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="header_side d-flex flex-row justify-content-center align-items-center">
+		<img src="~/course/images/phone-call.svg" alt="">
+		<span>+43 4566 7788 2457</span>
+	</div>
+
+</header>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="col-lg-12 footer_col">
+	<div class="footer_column_title"><h1>Hakkımızda</h1></div>
+    <div class="footer_column_content">
+        <p class="about_paragraph">Bir yolculuk başladığında, sayfalar arasında dolaşmak hiç bitmeyen bir keşif haline dönüşür. Biz, TeloBookstore olarak bu keşiflerin anahtarını sizlere sunuyoruz.</p>
+        <p class="about_paragraph">2022 yılında doğduk ve o zamandan beri kitapseverlerin kalplerinde yer edindik. Bizim için sadece bir kitap satın almak değil, bir dünyaya kapı açmaktır. TeloBookstore, okumayı sevenler için bir cennettir; her sayfa, yeni bir maceranın başlangıcıdır.</p>
+        <p class="about_paragraph">Tutkulu bir ekiple yola çıktık ve her adımda büyüdük. En sevilen klasiklerden en son çıkanlar arasından seçtiklerimize kadar, her kitap bizim için bir hikayenin ta kendisidir. Ve bu hikayeyi sizlerle paylaşmak için buradayız.</p>
+        <p class="about_paragraph">TeloBookstore sadece bir kitapçı değil, aynı zamanda bir yaşam tarzıdır. Bizimle birlikte, okumak sadece bir alışkanlık değil, bir tutku haline gelir. Haydi, birlikte sayfalarda kaybolalım ve sonsuz keşiflere doğru yelken açalım!</p>
+    </div>
+</div>
+
+

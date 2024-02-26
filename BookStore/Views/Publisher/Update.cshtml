@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Publisher
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/UserLayout2.cshtml";
+}
+
+<h1>Update Yayınevi</h1>
+<form asp-controller="Publisher" asp-action="Update" method="post">
+    <input type="hidden" asp-for="PublisherId" />
+
+    <div class="form-group">
+        <label asp-for="PublisherName" class="control-label"></label>
+        <input asp-for="PublisherName" class="form-control" />
+        <span asp-validation-for="PublisherName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PublisherCenter" class="control-label"></label>
+        <input asp-for="PublisherCenter" class="form-control" />
+        <span asp-validation-for="PublisherCenter" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PublisherOwner" class="control-label"></label>
+        <input asp-for="PublisherOwner" class="form-control" />
+        <span asp-validation-for="PublisherOwner" class="text-danger"></span>
+    </div>
+    <!-- Diğer gerekli alanları buraya ekleyin -->
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+

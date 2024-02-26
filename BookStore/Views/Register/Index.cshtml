@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout2.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <style>
+        .register_container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            background: #ffb606;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border-radius: 10px;
+        }
+
+        .small-textbox {
+            width: 200px; /* veya istediğiniz bir değer */
+            height: 30px; /* veya istediğiniz bir değer */
+        }
+        .button {
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .button:hover {
+                background-color: #333;
+            }
+    </style>
+</head>
+<body>
+    <div class="register_container">
+        <h1>Kayıt Ol</h1>
+        <form action="/register" method="post">
+            <label for="username">Kullanıcı Adı:</label><br>
+            <input type="text" id="username" name="UserName" required><br><br>
+
+            <label for="password">Şifre:</label><br>
+            <input type="password" id="password" name="UserPassword" required><br><br>
+
+            <input type="submit" value="Kayıt Ol" class="button">
+        </form>
+        <p>
+            <a href="#" id="btn2">Tüm Şartları Okudum Kabul Ediyorum.</a>
+        </p>
+    </div>
+</body>
+</html>
+<script>
+	$('#btn2').click(function () {
+		swal("Sitenin tüm şartlarını verdigimiz adres üzerinden bilgi ve aktarımları kabul ediyorum");
+	});
+</script>

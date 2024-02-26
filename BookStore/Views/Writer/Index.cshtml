@@ -1,0 +1,64 @@
+﻿@using EntityLayer.Concrete
+@model List<Writer>
+@{
+    ViewData["Title"] = "Yazarlar";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a asp-action="Create" class="btn btn-success">Ekle</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Millet</th>
+            <th>Doğum</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var writer in Model)
+        {
+            <tr>
+                <td>@writer.WriterId</td>
+                <td>@writer.WriterName</td>
+                <td>@writer.WriterNation</td>
+                <td>@writer.WriterBirth.ToString("yyyy")</td>
+                <td>
+					<div class="btn-group" role="group">
+						<a asp-action="Update" asp-route-id="@writer.WriterId" class="btn btn-primary">Düzenle</a>
+						&nbsp; <!-- Boşluk ekleyelim -->
+						<form asp-action="Delete" asp-route-id="@writer.WriterId" method="post" onsubmit="return confirm('Silmek istediğinize emin misiniz?');">
+							<button type="submit" class="btn btn-danger">Sil</button>
+						</form>
+					</div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

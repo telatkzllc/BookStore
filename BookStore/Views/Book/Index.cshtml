@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concrete
+@model List<Book>
+@{
+    ViewData["Title"] = "Kitaplar";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a asp-action="Create" class="btn btn-success">Ekle</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Page</th>
+        <th>Writer</th>
+        <th>Publisher</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+			<td>@item.Type</td>
+            <td>@item.Page</td>
+            <td>@item.Writer.WriterName</td>
+            <td>@item.Publisher.PublisherName</td>
+            <td>
+                <div class="btn-group" role="group">
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Düzenle</a>
+                    &nbsp; <!-- Boşluk ekleyelim -->
+                    <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Silmek istediğinize emin misiniz?');">
+                        <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
